@@ -1,0 +1,20 @@
+/* pid-symbols — états. Les couleurs se surchargent par variables CSS. */
+.pid { color: var(--pid-color, currentColor); overflow: visible; }
+.pid .pid-fill { transition: fill .2s; }
+.pid.is-running .pid-fill { fill: var(--pid-running-fill, currentColor); fill-opacity: var(--pid-running-opacity, .35); }
+.pid.is-closed .pid-fill { fill: currentColor; fill-opacity: 1; }
+.pid.is-open .pid-fill { fill: none; }
+.pid.is-fault { color: var(--pid-fault, #cf222e); }
+.pid.is-fault .pid-fill { fill: var(--pid-fault, #cf222e); fill-opacity: .18; }
+.pid.is-warning { color: var(--pid-warning, #b08800); }
+.pid.is-maintenance .pid-fill { stroke-dasharray: 3 3; }
+.pid.is-disabled { opacity: .4; }
+.pid.is-unknown { color: var(--pid-unknown, #8c959f); }
+.pid.is-unknown .pid-fill { stroke-dasharray: 2 3; }
+/* Animations : rotor en marche, écoulement dans les lignes. Désactivées si l'utilisateur réduit les animations. */
+.pid .pid-rotor { transform-box: view-box; transform-origin: 24px 24px; }
+.pid.is-running .pid-rotor { animation: pid-spin 1.4s linear infinite; }
+.pid.is-flowing .pid-line { stroke-dasharray: 6 6; animation: pid-flow .6s linear infinite; }
+@keyframes pid-spin { to { transform: rotate(360deg); } }
+@keyframes pid-flow { to { stroke-dashoffset: -12; } }
+@media (prefers-reduced-motion: reduce) { .pid .pid-rotor, .pid .pid-line { animation: none !important; } }
