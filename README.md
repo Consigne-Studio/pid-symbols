@@ -7,4 +7,4 @@
 
 ## Édition complète
 
-117 symboles en 11 familles (dont traitement d'eau, CVC, électricité, boucles de régulation), 468 PNG, sprite, bibliothèque draw.io, module JavaScript et animations : <lien Gumroad à venir>.
+117 symboles en 11 familles (dont traitement d'eau, CVC, électricité, boucles de régulation), 468 PNG, sprite, bibliothèque draw.io, module JavaScript et animations : https://consignestudio.fr/en/pid-symbols-svg/.
